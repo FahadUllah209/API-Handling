@@ -15,7 +15,7 @@ function AppContent() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 11;
   const { theme, toggleTheme } = useTheme();
 
   const fetchProducts = async () => {
