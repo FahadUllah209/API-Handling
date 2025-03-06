@@ -299,20 +299,21 @@ header h1 {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-template-areas:
-      "div1 div1 div1"
-      "div2 div2 div3"
-      "div4 div5 div6"
-      "div7 div8 div9"
-      "div10 div11 div11";
+      "div1 div1 div1 div1 div1 div1"
+      "div2 div2 div2 div2 div3 div3"
+      "div4 div4 div4 div5 div5 div5"
+      "div6 div6 div7 div7 div8 div8"
+      "div9 div9 div10 div10 div11 div11";
     padding: 0px 50px; 
   }
   .div1 {
     grid-area: div1;
     width: 104%;
   }
-  /* .div1 .card,
+  .div1 .card,
   .div2 .card,
   .div4 .card,
   .div5 .card{
@@ -320,7 +321,7 @@ header h1 {
     flex-direction: column;
     align-items: center;
   
-  } */
+  }
 
   .card {
     margin: 10px; 
