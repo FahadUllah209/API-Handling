@@ -1,3 +1,4 @@
+
 .search {
   width: 100%;
   display: flex;
@@ -45,18 +46,26 @@
 .loader {
   font-size: 3rem;
 }
+
 .card-image img {
-  width: 40%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
 }
-.div1 .card-image img{
- width: 450px;
- height: 200px;
+
+.div1{
+  display: flex;
 }
-.div2 .card-image img{
- width: 350px;
- height: 180px;
+.div1 .card-image img {
+  width: 100%; 
+  height: auto; 
 }
+
+.div2 .card-image img {
+  width: 100%;
+  height: auto; 
+}
+
 .div3 .card-image img,
 .div4 .card-image img,
 .div5 .card-image img,
@@ -66,8 +75,9 @@
 .div9 .card-image img,
 .div10 .card-image img,
 .div11 .card-image img {
- width: 100px;
- height: 140px;
+  width: 100%; 
+  height: auto; 
+  object-fit: contain;
 }
 
 .container {
@@ -81,51 +91,83 @@
     "div4 div4 div4 div5 div5 div5"
     "div6 div6 div7 div7 div8 div8"
     "div9 div9 div10 div10 div11 div11";
-
   grid-column-gap: 20px;
   grid-row-gap: 30px;
 }
 
 .div1 {
   grid-area: div1;
+  width: 104%;
 }
 
 .div2 {
   grid-area: div2;
 }
+
 .div3 {
   grid-area: div3;
+  flex-direction: column;
 }
+
 .div4 {
   grid-area: div4;
 }
+
 .div5 {
   grid-area: div5;
 }
+
 .div6 {
   grid-area: div6;
 }
+
 .div7 {
   grid-area: div7;
 }
+
 .div8 {
   grid-area: div8;
 }
+
 .div9 {
   grid-area: div9;
 }
+
 .div10 {
   grid-area: div10;
 }
+
 .div11 {
   grid-area: div11;
 }
 
-
-.card {
+.div1 .card,
+.div2 .card,
+.div4 .card,
+.div5 .card{
   display: flex;
   align-items: center;
-  justify-content: center;
+
+}
+.div3 .card,
+.div6 .card,
+.div7 .card,
+.div9 .card,
+.div10 .card,
+.div11 .card,
+.div8 .card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.card {
+  /* display: flex;
+  flex-direction: column; 
+  align-items: center;  */
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -148,10 +190,7 @@
   justify-content: center;
   width: 100%;
   height: 200px;
-  object-fit: cover;
 }
-
-
 
 .card-content {
   padding: 16px;
@@ -257,16 +296,73 @@ header h1 {
   margin: 0 0 10px;
 }
 
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-areas:
+      "div1 div1 div1"
+      "div2 div2 div3"
+      "div4 div5 div6"
+      "div7 div8 div9"
+      "div10 div11 div11";
+    padding: 0px 50px; 
+  }
+  .div1 {
+    grid-area: div1;
+    width: 104%;
+  }
+  /* .div1 .card,
+  .div2 .card,
+  .div4 .card,
+  .div5 .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  } */
+
+  .card {
+    margin: 10px; 
+  }
+
+  .card-title {
+    font-size: 1.1rem; 
+  }
+
+  .card-description,
+  .card-category,
+  .card-price,
+  .card-rating {
+    font-size: 0.8rem; 
+  }
+}
+
+
 @media (max-width: 768px) {
   .search input {
     width: 90%;
-    font-size: 0.9rem;
+    font-size: 0.9rem; 
   }
+
+  .div1 .card,
+.div2 .card,
+.div4 .card,
+.div5 .card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.div1 {
+  grid-area: div1;
+  width: 100%;
+}
 
   .container {
     width: 95%;
-    padding: 0px 0px 0px 10px;
-    grid-template-columns: 1fr;
+    padding: 0px 10px; 
+    grid-template-columns: 1fr; 
     grid-template-areas:
       "div1"
       "div2"
@@ -279,57 +375,27 @@ header h1 {
       "div9"
       "div10"
       "div11";
-      
-  }
-
-  .card-image {
-    height: 150px;
-  }
-
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .div1 .card-image img {
-    width:80%;
-    height: 80%;
-  }
-
-  .div2 .card-image img {
-    width:80%;
-    height: 80%;
-  }
-
-  .div3 .card-image img,
-  .div4 .card-image img,
-  .div5 .card-image img,
-  .div6 .card-image img,
-  .div7 .card-image img,
-  .div8 .card-image img,
-  .div9 .card-image img,
-  .div10 .card-image img,
-  .div11 .card-image img {
-    width: 80%;
-    height: 80%;
   }
 
   .card {
-    margin: 0px;
-   padding: 0;
-   
+    margin: 0px; 
+    padding: 0;
+  }
+
+  .card-image img {
+    width: 100%; 
+    height: auto; 
   }
 
   .card-title {
-    font-size: 1.1rem;
+    font-size: 1rem; 
   }
 
   .card-description,
   .card-category,
   .card-price,
   .card-rating {
-    font-size: 0.8rem;
+    font-size: 0.75rem; 
   }
 
   .pagination button {
@@ -338,6 +404,6 @@ header h1 {
   }
 
   .prod-not {
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
   }
 }
