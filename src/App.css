@@ -308,6 +308,7 @@ header h1 {
       "div6 div6 div7 div7 div8 div8"
       "div9 div9 div10 div10 div11 div11";
     padding: 0px 50px; 
+    padding-left: 20px;
   }
   .div1 {
     grid-area: div1;
@@ -362,7 +363,7 @@ header h1 {
 
   .container {
     width: 95%;
-    padding: 0px 10px; 
+    padding: 0px 15px; 
     grid-template-columns: 1fr; 
     grid-template-areas:
       "div1"
